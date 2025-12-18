@@ -40,5 +40,5 @@ stages:
       inputs:
         azureSubscription: 'ar01com'
         appType: 'webApp'
-        appName: 'lmliacpaas001'
+        appName: 'pucmbacloudpaas001'
         package: 'src'
