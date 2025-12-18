@@ -4,7 +4,7 @@ trigger:
 pool:
   name: Default # Nome do agent pool
   demands:
-    - Agent.Name -equals ag001  # Força o uso do agente específico
+    - Agent.Name -equals Joaos-MacBook-Pro  # Força o uso do agente específico
   vmImage: 'windows-latest'
 
 variables:
@@ -21,8 +21,8 @@ stages:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
         deploymentScope: 'Resource Group'
-        azureResourceManagerConnection: 'AZURE_Conn'
-        subscriptionId: '75b542e1-4e29-46e3-84e4-a024586c6e4a'
+        azureResourceManagerConnection: 'ar01com'
+        subscriptionId: '696d3443-2468-4c39-ad1a-719dae131f44'
         action: 'Create Or Update Resource Group'
         resourceGroupName: '$(resourceGroupName)'
         location: '$(location)'
@@ -38,7 +38,7 @@ stages:
     steps:
     - task: AzureWebApp@1
       inputs:
-        azureSubscription: 'AZURE_Conn'
+        azureSubscription: 'ar01com'
         appType: 'webApp'
         appName: 'lmliacpaas001'
         package: 'src'
